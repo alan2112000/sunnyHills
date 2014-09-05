@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 ### Style Guides
 
@@ -12,3 +13,9 @@
 
 
 
+=======
+sunnyHills
+==========
+
+website to maintain order from company
+>>>>>>> 123752392f5067440978d38a3303fd9a113f1e82
