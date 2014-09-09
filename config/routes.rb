@@ -1,3 +1,5 @@
 SunnyHills::Application.routes.draw do
-  root :to => 'high_voltage/pages#show', :id => 'welcome'
+  devise_for :users
+  resources :companies
+
 end
