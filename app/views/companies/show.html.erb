@@ -3,7 +3,9 @@
 
 <div class="span12">
     <div class="group">
-      <%= link_to("Edit",edit_company_path(@company), :class => "btn btn-mini btn-primary pull-right") %>
+      <%= link_to("編輯公司資料",edit_company_path(@company), :class => "btn btn-mini btn-primary pull-right") %>
+      <%= link_to("顯示歷史訂單", company_orders_path(@company), :class => "btn btn-mini btn-primary pull-right") %>
+      <%= link_to("新增訂單", new_company_order_path, :class => "btn btn-mini btn-primary pull-right") %>
     </div>
 </div>
 

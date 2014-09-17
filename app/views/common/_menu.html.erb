@@ -16,9 +16,10 @@
           <div class="nav-collapse">
       
               <%= render_list :class => "nav" do |li|
-                li << link_to("Link-1","#")
-                li << link_to("Link-2","#")
-                li << link_to("Link-3","#")
+                li << link_to("產品",products_path)
+                li << link_to("公司",companies_path)
+                li << link_to("收據",invoices_path)
+                li << link_to("付款方式", payment_methods_path)
               end %>
               
               <%= render :partial => "common/user_nav"%>

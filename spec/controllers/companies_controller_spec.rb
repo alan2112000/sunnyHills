@@ -48,14 +48,14 @@ RSpec.describe CompaniesController, :type => :controller do
     it "assigns the requested company as @company" do
       company = Company.create! valid_attributes
       get :show, {:id => company.to_param}, valid_session
-      expect(assigns(:company)).to eq(company)
+      expect(assigns(:invoice)).to eq(company)
     end
   end
 
   describe "GET new" do
     it "assigns a new company as @company" do
       get :new, {}, valid_session
-      expect(assigns(:company)).to be_a_new(Company)
+      expect(assigns(:invoice)).to be_a_new(Company)
     end
   end
 
@@ -63,7 +63,7 @@ RSpec.describe CompaniesController, :type => :controller do
     it "assigns the requested company as @company" do
       company = Company.create! valid_attributes
       get :edit, {:id => company.to_param}, valid_session
-      expect(assigns(:company)).to eq(company)
+      expect(assigns(:invoice)).to eq(company)
     end
   end
 
@@ -71,30 +71,30 @@ RSpec.describe CompaniesController, :type => :controller do
     describe "with valid params" do
       it "creates a new Company" do
         expect {
-          post :create, {:company => valid_attributes}, valid_session
+          post :create, {:invoice => valid_attributes}, valid_session
         }.to change(Company, :count).by(1)
       end
 
       it "assigns a newly created company as @company" do
-        post :create, {:company => valid_attributes}, valid_session
-        expect(assigns(:company)).to be_a(Company)
-        expect(assigns(:company)).to be_persisted
+        post :create, {:invoice => valid_attributes}, valid_session
+        expect(assigns(:invoice)).to be_a(Company)
+        expect(assigns(:invoice)).to be_persisted
       end
 
       it "redirects to the created company" do
-        post :create, {:company => valid_attributes}, valid_session
+        post :create, {:invoice => valid_attributes}, valid_session
         expect(response).to redirect_to(Company.last)
       end
     end
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved company as @company" do
-        post :create, {:company => invalid_attributes}, valid_session
-        expect(assigns(:company)).to be_a_new(Company)
+        post :create, {:invoice => invalid_attributes}, valid_session
+        expect(assigns(:invoice)).to be_a_new(Company)
       end
 
       it "re-renders the 'new' template" do
-        post :create, {:company => invalid_attributes}, valid_session
+        post :create, {:invoice => invalid_attributes}, valid_session
         expect(response).to render_template("new")
       end
     end
@@ -108,20 +108,20 @@ RSpec.describe CompaniesController, :type => :controller do
 
       it "updates the requested company" do
         company = Company.create! valid_attributes
-        put :update, {:id => company.to_param, :company => new_attributes}, valid_session
+        put :update, {:id => company.to_param, :invoice => new_attributes}, valid_session
         company.reload
         skip("Add assertions for updated state")
       end
 
       it "assigns the requested company as @company" do
         company = Company.create! valid_attributes
-        put :update, {:id => company.to_param, :company => valid_attributes}, valid_session
-        expect(assigns(:company)).to eq(company)
+        put :update, {:id => company.to_param, :invoice => valid_attributes}, valid_session
+        expect(assigns(:invoice)).to eq(company)
       end
 
       it "redirects to the company" do
         company = Company.create! valid_attributes
-        put :update, {:id => company.to_param, :company => valid_attributes}, valid_session
+        put :update, {:id => company.to_param, :invoice => valid_attributes}, valid_session
         expect(response).to redirect_to(company)
       end
     end
@@ -129,13 +129,13 @@ RSpec.describe CompaniesController, :type => :controller do
     describe "with invalid params" do
       it "assigns the company as @company" do
         company = Company.create! valid_attributes
-        put :update, {:id => company.to_param, :company => invalid_attributes}, valid_session
-        expect(assigns(:company)).to eq(company)
+        put :update, {:id => company.to_param, :invoice => invalid_attributes}, valid_session
+        expect(assigns(:invoice)).to eq(company)
       end
 
       it "re-renders the 'edit' template" do
         company = Company.create! valid_attributes
-        put :update, {:id => company.to_param, :company => invalid_attributes}, valid_session
+        put :update, {:id => company.to_param, :invoice => invalid_attributes}, valid_session
         expect(response).to render_template("edit")
       end
     end

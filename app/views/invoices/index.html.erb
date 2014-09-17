@@ -1,0 +1,29 @@
+<h1>收據種類</h1>
+<div class="span12">
+
+  <div class="group">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Name</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% if @invocies.nil? %>
+          <% @invoices.each do |invocie| %>
+              <tr>
+                <td><%= invocie.name %></td>
+                <td><%= link_to 'Edit', edit_invoice_path(invocie) %></td>
+                <td><%= link_to 'Destroy', invoice, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+              </tr>
+          <% end %>
+      <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to("新增收據", new_invoice_path)%>
+  </div>
+</div>

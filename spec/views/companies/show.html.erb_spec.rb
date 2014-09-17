@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "companies/show", :type => :view do
   before(:each) do
-    @company = assign(:company, Company.create!(
+    @company = assign(:invoice, Company.create!(
       :name => "Name",
       :company_no => "Company No",
       :person_charge => "Person Charge",

@@ -11,13 +11,69 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140914152122) do
+ActiveRecord::Schema.define(version: 20140917135325) do
 
   create_table "companies", force: true do |t|
     t.string   "name"
     t.string   "company_no"
     t.string   "person_charge"
     t.string   "contact"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "discounts", force: true do |t|
+    t.string   "name"
+    t.float    "discount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "invoces", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "order_detail_product_relationships", force: true do |t|
+    t.integer  "orderDetail_id"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "order_details", force: true do |t|
+    t.integer  "order_id"
+    t.integer  "product_id"
+    t.integer  "amount"
+    t.integer  "total_price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", force: true do |t|
+    t.integer  "company_id"
+    t.integer  "amount"
+    t.date     "date"
+    t.text     "gift"
+    t.date     "arrival_date"
+    t.integer  "invoice_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "discount_id"
+  end
+
+  create_table "payment_detail_orderships", force: true do |t|
+    t.integer  "order_id"
+    t.integer  "payment_method_id"
+    t.integer  "product_id"
+    t.integer  "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "payment_methods", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

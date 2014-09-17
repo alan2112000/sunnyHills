@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "companies/edit", :type => :view do
   before(:each) do
-    @company = assign(:company, Company.create!(
+    @company = assign(:invoice, Company.create!(
       :name => "MyString",
       :company_no => "MyString",
       :person_charge => "MyString",
